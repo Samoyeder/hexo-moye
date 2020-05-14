@@ -1,0 +1,44 @@
+#--------
+#全局配置
+#--------
+
+# 头像
+avatar: /img/avatar.jpg
+# 用户名
+username: 'Samoyeder'
+
+
+# 首页大图
+bannerImg: /img/banner/1.jpg
+
+# 博客title
+title: 'Hello World'
+
+# 备案信息
+beian: 京ICP备20006979号
+
+#------
+#导航栏
+#------
+# 分页配置
+menu:
+  home: /
+  categories: /categories
+  tags: /tags
+  archives: /archives
+  about: /about
+
+
+#----------
+#页脚footer
+#----------
+
+# 站点运行开始时间
+time:
+  enable: true
+  year: 2019 # 年份
+  month: 11 # 月份
+  date: 15 # 日期
+  hour: 00 # 小时
+  minute: 00 # 分钟
+  second: 00 # 秒

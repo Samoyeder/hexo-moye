@@ -1,0 +1,35 @@
+<% if (page.current){ %>
+<nav class="paginator">
+    <%if(!page.prev){%>
+    <!-- 在第一页 -->
+    <%- paginator({
+        prev_text: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+        next_text: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+        escape: false,
+        end_size:1,
+        mid_size:1
+    })%>
+
+
+    <%}else if(!page.next){%>
+    <!-- 在最后一页 -->
+    <%- paginator({
+        prev_text: '<i class="fa fa-angle-left " aria-hidden="true"></i>',
+        next_text: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+        escape: false,
+        end_size:1,
+        mid_size:1
+    }) %>
+
+    <%} else{%>
+    <%- paginator({    
+        prev_text: '<i class="fa fa-angle-left " aria-hidden="true"></i>',
+        next_text: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+        escape: false,
+    end_size:1,
+    mid_size:1        
+    }) %>
+    <%}%>
+
+</nav>
+<% } %>

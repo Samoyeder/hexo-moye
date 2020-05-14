@@ -1,0 +1,55 @@
+<%- partial('_partial/menu') %>
+<section class="posts">
+    <% page.posts.each(function (post) { %>
+    <article class="index-post">
+
+        <!-- 左边图片 -->
+        <div class="post-img">
+            <a href="<%- url_for(post.path) %>">
+                <img src="<%- post.index_img %>" alt="">
+            </a>
+
+        </div>
+
+
+        <!-- 右边信息 -->
+        <div class="information">
+            <!-- 右边上部分文章标题\摘要 -->
+            <div class="post-info">
+
+                <div class="post-title">
+                    <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                </div>
+
+                <div class="post-content">
+                    <a class="post-title-link" href="<%- url_for(post.path) %>"><%- post.excerpt %></a>
+                </div>
+            </div>
+
+            <!-- 右边下部分文章分类\时间 -->
+            <div class="post-meta">
+                <div class="post-cate">
+                    <% post.categories.each(function(cate){ %>
+                    <a href="<%- url_for(cate.path) %>">
+                        <i class="fa fa-list"></i>
+                        <%= cate.name %>
+                    </a>
+                    <% }) %>
+                </div>
+
+                <div class="post-time">
+                    <span class="post-time">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <%- date(post.date, "YYYY-MM-DD") %>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </article>
+    <% }) %>
+</section>
+
+<%- partial('_partial/paginator') %>

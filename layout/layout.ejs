@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/head') %>
+
+<body>
+    <div class="background-img">
+        <img src="<%= theme.bannerImg %>" alt="">
+    </div>
+    <%- partial('_partial/header') %>
+    <div class="block">
+            <span id="themeTitle"><%= page.title||page.category|| theme.title%></span>
+    </div>
+    <div class="container">
+        <%- body %>
+    </div>
+    <%- partial('_partial/footer') %>
+
+</body>
+
+</html>

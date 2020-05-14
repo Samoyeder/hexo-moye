@@ -1,0 +1,48 @@
+.paginator {
+    // background-color:  #bfa
+    font-size: 2rem;
+    // width: 400px
+    position: relative;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    // .page-number{
+    // display: none
+    // }
+
+    // :first-child{
+    // background-color: red
+    // }
+    // :last-child{
+    // background-color: blue
+    // }
+    i, span, a {
+        text-align: center;
+        vertical-align: center;
+        display: block;
+        height: 50px;
+        width: 50px;
+        // background-color: #bfa
+        transition: 0.3s;
+        color: #3c4858;
+        // border-radius: 0.1rem;
+        background-color: rgba(255, 255, 255,.9);
+    }
+
+    i {
+        padding-top: 10px;
+        height: 40px;
+        background-color: rgba(255, 255, 255,.2);
+    }
+
+    i:hover, .current:hover, a:hover {
+        background-color: #afadad;
+    }
+
+    .current {
+        background-color: #afadad;
+    }
+}

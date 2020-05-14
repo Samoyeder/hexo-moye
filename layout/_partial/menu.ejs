@@ -1,0 +1,126 @@
+<div class="index-menu">
+    <div class="user">
+        <div class="user-top">
+            <img src="https://shawnzeng.com/wp-content/uploads/2018/12/Christmas_BG.jpg" alt="">
+        </div>
+        <div class="user-avatar">
+            <img src="<%= theme.avatar %>" alt="">
+        </div>
+        <p class="user-name"><%=  theme.username %></p>
+        <div class="user-info">
+            <div class="user-info-article">
+                <span class="user-info-num"><%- site.posts.length %></span>
+                <span>文章</span>
+            </div>
+            <div class="user-info-cate">
+
+                <span class="user-info-num"><%- site.categories.length %></span>
+                <span>分类</span>
+            </div>
+            <div class="user-info-tag">
+
+                <span class="user-info-num"><%- site.tags.length %></span>
+                <span>标签</span>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact-title">联系我</div>
+        <div class="contact-line"></div>
+        <ul class="contact-form">
+            <li>
+                <a href="#">
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fab fa-weixin" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+
+
+
+    </div>
+    <div class="tag">
+        <div class="tag-title">标签</div>
+        <div class="tag-line"></div>
+        <div class="tag-content">
+            <%- tagcloud({
+                min_font: 15,
+                max_font: 20,
+                amount: 999,
+                // unit: unit,
+                // color: true,
+                // start_color,
+                // end_color
+            }) %>
+        </div>
+
+    </div>
+
+    <div class="count">
+        <div class="count-title">统计</div>
+        <div class="count-line"></div>
+        <!-- <div class="count-content-box"> -->
+        <ul class="count-content">
+            <li>
+                <i class="fa fa-paper-plane" aria-hidden="true">建站时间</i>
+                <span><%- theme.time.year+'年'+theme.time.month+'月'+theme.time.date+'日' %></span>
+            </li>
+            <li>
+                <i class="fa fa-clock" aria-hidden="true">运行时间</i>
+                <span id="siteTime">努力获取中..</span>
+
+
+
+                <script>
+                    function siteTime() {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "<%- theme.time.year %>";
+                        var startMonth = "<%- theme.time.month %>";
+                        var startDate = "<%- theme.time.date %>";
+
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+
+                        var t1 = Date.UTC(startYear, startMonth, startDate);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate);
+                        var diff = t2 - t1;
+
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        console.log(diffYears)
+                        console.log(diffDays)
+
+                        document.getElementById("siteTime").innerHTML = diffDays + diffYears * 365 + "天"
+
+
+                    }
+                    setTimeout(siteTime, 1000);
+                </script>
+
+            </li>
+            
+        </ul>
+
+        <!-- </div> -->
+    </div>
+</div>

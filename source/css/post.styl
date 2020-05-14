@@ -1,0 +1,197 @@
+
+.post {
+    // background-color: red
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toc {
+    // width: 320px;
+    // height 300px
+
+    // background-color: #bfa
+
+    // float: right
+    ol {
+        list-style: none;
+    }
+
+    .toc-content {
+            
+        width: 300px
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 35px 25px 1px 0px ;
+        top: 100px;
+        position: sticky;
+        margin: 0;
+        border-radius: 0.5rem;
+        .post-toc{
+            a{
+                color: #738192;
+
+                &:hover{
+                    color:#20a0ff
+                }
+            }
+            
+        }
+
+        &:hover .toc-content-line {
+            width: 100%;
+        }
+    }
+
+    .toc-content-line {
+        width: 100px;
+        height: 2px;
+        background-color: #20a0ff;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        transition: all 0.3s;
+    }
+
+    .toc-content-title {
+        width: 80%;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            padding-right: 20px;
+            text-align: right;
+            line-height: 50px;
+            // background-color: #bfa;
+            font-size: 1.5rem;
+            font-family: 'Comic Sans MS', cursive, LiSu, sans-serif;
+    }
+}
+
+.post-box {
+    .post-background-outer {
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 1110px;
+        // padding: 50px
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 50px;
+    }
+
+    .post-background-inner {
+        width: 920px;
+        // background-color: red
+    }
+
+    .post-content {
+        h1, h2, h3, h4, h5, h6 {
+            // color: red;
+        }
+
+        code {
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px #999;
+            // background-color: red
+            font-size: 0.8rem;
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0px 0px 8px #999;
+            margin: 0 auto;
+            display: block;
+        }
+
+        ul {
+            li {
+                list-style-type: disc;
+                margin-left: 25px;
+                margin-top: 10px;
+            }
+        }
+
+        ol {
+            li {
+                list-style-type: decimal;
+                margin-left: 25px;
+                margin-top: 10px;
+            }
+        }
+
+        p, li {
+            code {
+                color: #c7254e;
+                background-color: rgba(249, 242, 244, 0.9);
+                // background-color: black;
+                font-size: 1rem;
+                border-radius: 3px;
+                box-shadow: 0px 0px 0;
+                padding-right: 2px;
+                padding-left: 2px;
+            }
+        }
+
+        table {
+            width: 100%;
+            border: 0;
+            margin: 20px 0 50px 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            line-height: 35px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px #999;
+
+            th {
+                background: #73b1e0;
+                font-weight: 800;
+                font-size: 18px;
+                text-align: left;
+                line-height: 35px;
+                color: #FFF;
+            }
+
+            tr:nth-child(odd) {
+                background: #F4F4F4;
+            }
+
+            tr:hover, td:hover {
+                background: #badbf5;
+                color: #FFF;
+            }
+
+            td, th {
+                padding: 5px 20px 5px 20px;
+            }
+
+            tr:first-child, th:first-child {
+                border-top-left-radius: 3px;
+            }
+
+            tr:first-child, th:last-child {
+                border-top-right-radius: 3px;
+            }
+
+            tr:last-child, td:first-child {
+                border-bottom-left-radius: 3px;
+            }
+
+            tr:last-child, td:last-child {
+                border-bottom-right-radius: 3px;
+            }
+        }
+
+        blockquote {
+            border-left: 0.4rem solid #0583f9;
+            background-color: rgba(5, 166, 249, 0.1);
+            // color: #0000cc;
+            padding-left: 1em;
+            padding-top: 0;
+            margin: 0;
+            border-radius: 3px;
+        }
+    }
+}
