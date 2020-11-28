@@ -6,46 +6,25 @@ body {
     color: #3c4858;
 }
 
-// 占位
-.block {
-    // background-color: red;
-    height: 800px;
-    width: 100%;
-    position: relative;
-
-    span {
-        left: 50%;
-        top: 50%;
-        position: absolute;
-        transform: translateX(-50%) translateY(-50%);
-        font-family: 'Comic Sans MS', cursive, LiSu, sans-serif;
-        font-size: 6rem;
-        color: rgba(255,255,255,.8)
-        // display inline
+.container{
+    display: flex
+    // background-color: red
+    justify-content: space-between
+    margin: 0 20px 0 20px
+    .body{
+        width: 1220px
     }
 }
 
-// 背景图片
-.background-img img {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    z-index: -99;
-    background-repeat: no-repeat;
-}
 
-.container {
-    max-width: 1270px;
-    margin: 0 auto;
-    // background-color: #bfa
-    position relative
-}
-
-@import '_partial/header';
+// partial样式文件
 @import '_partial/archive.styl';
-@import 'index';
-@import 'reset.styl';
 @import '_partial/footer.styl';
 @import '_partial/pageinator.styl';
 @import '_partial/menu.styl';
+@import '_partial/cateNav.styl';
+@import '_partial/postTitle.styl';
+
+@import 'reset.styl';
+@import 'index.styl';
 @import 'post.styl';

@@ -1,0 +1,27 @@
+<div id="postTitle">
+  <!-- 左侧标题日期 -->
+  <div class="post_t">
+    <div class="post_title"><%= page.title %></div>
+    <div class="post_time"><%- date(page.date, 'YYYY-MM-DD') %></div>
+  </div>
+  <!-- 背景图 -->
+  <div class="post_back_img">
+    <div class="post_back_img_mask"></div>
+    <img src="<%= page.index_img %>">
+  </div>
+  <!-- 右侧小图 -->
+  <div class="post_page">
+
+    <div class="post_cate">
+      <% page.categories.each(function(cate){ %>
+      <a href="<%- url_for(cate.path) %>">
+        <i class="fa fa-list"></i>
+        <span>
+          <%= cate.name %>
+        </span>
+      </a>
+      <% }) %>
+    </div>
+    <img src="<%= page.index_img %>">
+  </div>
+</div>

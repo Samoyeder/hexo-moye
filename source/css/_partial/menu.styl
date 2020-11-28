@@ -1,304 +1,165 @@
 .index-menu {
-    // background-color: red;
-    position: absolute;
-    right: 20px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+
+  // 头像标题
+  .menu_title {
     display: flex;
-    flex-direction: column;
-    width: 300px;
+    justify-content: left;
+    align-items: center;
+    font-size: 24px;
+    // background-color: red
+    margin-top: 10px;
+  }
 
-    .user {
-        position: relative;
-        width: 100%;
-        height: 360px;
-        background-color: rgba(255, 255, 255, 0.85);
-        border-radius: 1rem;
-        margin-top: 18px;
-        overflow: hidden;
+  // 导航条
+  .menu-box {
+    width: 100%
+    margin-top: 10px;
 
-        .user-top {
-            width: 100%;
-            height: 120px;
+    .menu-item {
+      // background-color: red
+      cursor: pointer;
 
-            // border-bottom: 1px solid rgb(115, 129, 146);
-            img {
-                height: 100%;
-                width: 100%;
-            }
+      // align-items: center
+      // display: flex
+      // ;
+      &:hover {
+        i, span {
+          color: rgb(50, 182, 255);
         }
+      }
 
-        .user-avatar {
-            img {
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                top: 80px;
-                position: absolute;
-                border-radius: 50%;
-                height: 100px;
-                display: block;
-                border: 3px solid #fff;
-            }
+      i, span {
+        color: rgb(101, 116, 135);
+        font-size: 14px;
+      }
+
+      a {
+        display: block;
+        // width: 180px;
+        // background-color: #bfa;
+        height: 100%;
+        margin-top: 5px;
+        padding: 8px 0 10px 10px;
+
+        &.active {
+          background-color: rgb(50, 182, 255);
+          border-radius: 20px;
+
+          i, span {
+            color: #fff;
+          }
         }
+      }
+    }
+  }
 
-        .user-name {
-            top: 190px;
-            position: absolute;
-            justify-content: center;
-            // background-color: #bfa;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.9rem;
-            font-family: 'Comic Sans MS', cursive, LiSu, sans-serif;
-        }
+  // 标签云
+  .tag {
+    width: 100%;
+    margin-top: 20px;
 
-        .user-info {
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            position: absolute;
-            bottom: 40px;
-            height: 80px;
-            width: 300px;
-            // background-color: red
-            display: flex;
-            justify-content: space-around;
-
-            .user-info-article, .user-info-cate, .user-info-tag {
-                justify-content: center;
-                display: flex;
-                flex-direction: column;
-                // background-color: blue
-                font-size: 1.3rem;
-
-                span {
-                    text-align: center;
-                }
-            }
-
-            .user-info-num {
-                color: rgb(32, 160, 255);
-            }
-        }
+    .tag-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgb(153, 169, 191);
     }
 
-    .contact {
-        width: 100%;
-        height: 130px;
-        background-color: rgba(255, 255, 255, 0.85);
-        // background-color: blue;
-        border-radius: 1rem;
-        margin-top: 20px;
-        position: relative;
-        overflow: hidden;
+    .tag-content {
+      margin-top: 5px;
 
-        &:hover .contact-line {
-            width: 100%;
+      a {
+        background-color: #fff;
+        font-size: 12px;
+        display: inline-block;
+        margin: 2px;
+        padding: 5px;
+        transition: all 0.3s ease-out;
+        border-radius: 5px;
+        color: rgb(115, 129, 146);
+        box-shadow: 0 5px 8px rgba(31, 45, 61, 0.1);
+
+        // margin: 5px
+        &:hover {
+          // border-radius: 0.5rem;
+          color: rgb(32, 160, 255);
+          // box-shadow: 0 0 6px #999;
+          // transform: translateY(-1px);
         }
+      }
+    }
+  }
 
-        .contact-title {
-            width: 80%;
-            height: 50px;
-            position: absolute;
-            top: 0;
-            right: 0px;
-            padding-right: 20px;
-            text-align: right;
-            line-height: 50px;
-            // background-color: #bfa;
-            font-size: 1.5rem;
-            font-family: 'Comic Sans MS', cursive, LiSu, sans-serif;
-        }
+  // 统计
+  .count {
+    margin-top: 30px;
+    width: 100%;
 
-        .contact-line {
-            width: 100px;
-            height: 2px;
-            background-color: #20a0ff;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            transition: all 0.3s;
-        }
-
-        .contact-form {
-            margin: 60px auto;
-            // background-color: red;
-            width: 300px;
-            top: 60px;
-            left: 10px;
-            display: flex;
-            justify-content: space-around;
-
-            li {
-                height: 40px;
-                line-height: 40px;
-                text-align: center;
-
-                // background-color: blue
-                // margin-bottom: 10px;
-                // font-size: 1.2rem;
-                // border-bottom: 1px solid rgb(115, 129, 146);
-                a {
-                    // background-color: red
-                    display: block;
-                    // margin: 10px
-                    transition: all 0.3s ease-out;
-                    width: 50px;
-                    height: 50px;
-                    line-height: 50px;
-                    color: rgb(115, 129, 146);
-
-                    &:hover {
-                        border-radius: 0.8rem;
-                        color: rgb(32, 160, 255);
-                        box-shadow: 0 0 6px #999;
-                        transform: translateY(-3px);
-                    }
-
-                    i {
-                        text-align: center;
-                        vertical-align: middle;
-                        font-size: 1.8rem;
-                    }
-                }
-            }
-        }
+    // height: 300px;
+    .count-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgb(153, 169, 191);
     }
 
-    .tag {
-        width: 100%;
-        // height: 200px;
-        background-color: rgba(255, 255, 255, 0.85);
-        border-radius: 1rem;
-        margin-top: 20px;
-        position: relative;
-        overflow: hidden;
+    .count-content {
+      margin-top: 5px;
 
-        &:hover .tag-line {
-            width: 100%;
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        height: 30px;
+        line-height: 30px;
+
+        // background-color: #bfa;
+        i {
+          font-size: 14px;
+          align-items: center;
+          line-height: 30px;
+          color: rgb(115, 129, 146);
         }
 
-        .tag-title {
-            width: 80%;
-            height: 50px;
-            position: absolute;
-            top: 0;
-            right: 0px;
-            padding-right: 20px;
-            text-align: right;
-            line-height: 50px;
-            // background-color: #bfa;
-            font-size: 1.5rem;
-            font-family: 'Comic Sans MS', cursive, LiSu, sans-serif;
+        span {
+          // border: 1px solid rgb(115, 129, 146);
+          // border-radius: 0.5rem;
+          color: rgb(115, 129, 146);
+          // color: rgb(32, 160, 255);
+          font-size: 14px;
         }
+      }
+    }
+  }
 
-        .tag-line {
-            width: 100px;
-            height: 2px;
-            background-color: #20a0ff;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            transition: all 0.3s;
-        }
-
-        .tag-content {
-            margin-top: 60px;
-            // position: absolute;
-            // top: 60px;
-            width: 280px;
-            // background-color: red;
-            margin: 60px auto 20px auto;
-            left: 0;
-            right: 0;
-
-            a {
-                // background-color: #bfa;
-                display: inline-block;
-                margin: 5px;
-                padding: 2px;
-                transition: all 0.3s ease-out;
-                // border: 1px solid rgb(115, 129, 146);
-                border-radius: 0.5rem;
-                color: rgb(115, 129, 146);
-
-                // margin: 5px
-                &:hover {
-                    border-radius: 0.5rem;
-                    color: rgb(32, 160, 255);
-                    box-shadow: 0 0 6px #999;
-                    transform: translateY(-3px);
-                }
-            }
-        }
+  // 文章目录
+  .toc {
+    .toc-title {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgb(153, 169, 191);
     }
 
-    .count {
-        width: 100%;
-        // height: 300px;
-        background-color: rgba(255, 255, 255, 0.85);
-        border-radius: 1rem;
-        margin-top: 20px;
-        position: relative;
+    .toc-content {
+      margin-top: 5px;
+      font-size: 14px;
 
-        &:hover .count-line {
-            width: 100%;
+      a, span {
+        color: #738192;
+
+        &:hover {
+          color: #20a0ff;
         }
+      }
 
-        .count-title {
-            width: 80%;
-            height: 50px;
-            position: absolute;
-            top: 0;
-            right: 0px;
-            padding-right: 20px;
-            text-align: right;
-            line-height: 50px;
-            // background-color: #bfa;
-            font-size: 1.5rem;
-            font-family: 'Comic Sans MS', cursive, LiSu, sans-serif;
-        }
-
-        .count-line {
-            width: 100px;
-            height: 2px;
-            background-color: #20a0ff;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            transition: all 0.3s;
-        }
-
-        .count-content {
-            margin-top: 60px;
-            width: 90%;
-            margin: 60px auto 20px auto;
-            font-size: 1rem;
-
-            li {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 20px;
-                height: 30px;
-                line-height: 30px;
-                // background-color: #bfa;
-
-                i {
-                    font-size: .9rem;
-                    align-items: center;
-                    line-height: 30px;
-                    color: rgb(115, 129, 146)
-                }
-
-                span {
-                    // border: 1px solid rgb(115, 129, 146);
-                    // border-radius: 0.5rem;
-                    color: rgb(115, 129, 146)
-                    // color: rgb(32, 160, 255);
-                    font-size: .9rem;
-                }
-            }
-        }
+      .post-toc-child {
+        margin-left: 10px;
+      }
     }
+  }
 }

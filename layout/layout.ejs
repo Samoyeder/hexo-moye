@@ -3,18 +3,21 @@
 <%- partial('_partial/head') %>
 
 <body>
-    <div class="background-img">
-        <img src="<%= theme.bannerImg %>" alt="">
-    </div>
-    <%- partial('_partial/header') %>
-    <div class="block">
-            <span id="themeTitle"><%= page.title||page.category|| theme.title%></span>
-    </div>
+    <!-- header预留 -->
     <div class="container">
-        <%- body %>
+        <!-- 左侧menu菜单栏 -->
+        <div class="menu">
+
+            <%- partial('_partial/menu') %>
+        </div>
+        <!-- 右侧主体 -->
+        <div class="body">
+            <!-- body将会解析index.ejs -->
+            <%- body %>
+            <%- partial('_partial/paginator') %>
+        </div>
     </div>
     <%- partial('_partial/footer') %>
-
 </body>
 
 </html>

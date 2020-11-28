@@ -1,48 +1,7 @@
-<header class="header">
+<!-- 暂时没写 -->
 
-    <!-- 博客title -->
-    <div class="blog-title">
-        <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
-    </div>
-
-    <nav class="navbar" id="nav-bar">
-        <ul class="menu">
-
-            <li class="menu-item">
-                <a href="<%- url_for(theme.menu["home"])%>" class="menu-item-link">
-                    <i class="fa fa-home"><%= '首页' %></i>
-
-                </a>
-            </li>
-            <li class="menu-item" id="menu-item-cate">
-                <a class="menu-item-link" id="nav-cate">
-                    <i class="fa fa-list" aria-hidden="true"><%= '分类' %></i>
-                </a>
-
-                <ul class="cate-menu">
-                    <% site.categories.each(function (cate) { %>
-                    <li class="cate-menu-item">
-                        <a href="<%- url_for('categories'+'/'+cate.name)%>"><%= cate.name %></a>
-                    </li>
-                    <% }) %>
-                </ul>
-            </li>
-
-
-
-            <li class="menu-item">
-                <a href="<%- url_for(theme.menu['archives'])%>" class="menu-item-link">
-                    <i class="fa fa-tag" aria-hidden="true"><%= '归档' %></i>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="<%- url_for(theme.menu['about'])%>" class="menu-item-link">
-                    <i class="fa fa-user" aria-hidden="true"><%= '关于' %></i>
-                </a>
-            </li>
-
-        </ul>
-    </nav>
-
-
+<header>
+  <div class="avatar">
+    <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
+  </div>
 </header>

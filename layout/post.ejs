@@ -1,29 +1,11 @@
-    <article class="post">
-
-        <div class="post-box">
-            <!-- 文章底部背景 -->
-            <div class="post-background-outer">
-                <div class="post-background-inner">
-                    <!-- 文章内容 -->
-                    <div class="post-info">
-                        <span class="post-title"><%= page.title %></span>
-                        <span class="post-time"><%- date(page.date, 'YYYY-MM-DD') %></span>
-                        <span class="post-content"><%- page.content %></span>
-                    </div>
-                </div>
-            </div>
+<%- partial('_partial/postTitle') %>
+<article class="post">
+    <div class="post-box">
+        <!-- 文章内容 -->
+        <div class="post-info">
+            <span class="post-content"><%- page.content %></span>
         </div>
+    </div>
 
-        <div class="toc">
 
-            <div class="toc-content">
-                <span class="toc-content-title">目录</span>
-                <span class="toc-content-line"></span>
-                <%- toc(page.content,{
-                list_number:false,
-                min_depth:1,
-                class:'post-toc'
-            }) %>
-            </div>
-        </div>
-    </article>
+</article>

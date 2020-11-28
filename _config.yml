@@ -8,8 +8,8 @@ avatar: /img/avatar.jpg
 username: 'Samoyeder'
 
 
-# 首页大图
-bannerImg: /img/banner/1.jpg
+# 分类图片
+# cateImg: /img/category/cat1.png
 
 # 博客title
 title: 'Hello World'
