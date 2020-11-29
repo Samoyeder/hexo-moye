@@ -2,7 +2,7 @@
   // position: relative
   // margin-left: 500px
   // background-color: blue;
-  min-height: 80vh
+  min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
 
@@ -21,6 +21,27 @@
     box-shadow: 0 10px 15px rgba(31, 45, 61, 0.1), 0 0 0 1px hsla(0, 0%, 100%, 0.06) inset;
     padding: 0 10px 10px 10px;
     transition: all 0.3s ease-out;
+
+    @media (max-width: 1500px) {
+      width: 225px;
+      height: 230px;
+
+      .post-img {
+        img {
+          max-height: 180px;
+        }
+      }
+    }
+
+    @media (max-width: 850px) {
+      flex: 12;
+      min-width 160px
+      .post-img {
+        img {
+          max-height: 180px;
+        }
+      }
+    }
 
     .post-title {
       padding: 15px 0 15px 5px;
@@ -41,7 +62,7 @@
 
     .post-img {
       img {
-        min-height: 230px;
+        height: 230px;
         width: 100%;
         border-radius: 10px;
         transition: all 0.3s ease-out;

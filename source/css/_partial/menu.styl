@@ -1,10 +1,20 @@
 .index-menu {
+  @media (max-width: 1130px) {
+    height: 0px;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 999;
+    left: 0
+    padding: 0 10px 0 10px
+  }
+
   position: fixed;
   height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
   width: 230px;
+  transition: all 0.3s;
 
   // 头像标题
   .menu_title {
@@ -18,7 +28,7 @@
 
   // 导航条
   .menu-box {
-    width: 100%
+    width: 100%;
     margin-top: 10px;
 
     .menu-item {

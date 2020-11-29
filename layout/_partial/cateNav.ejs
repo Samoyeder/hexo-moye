@@ -1,6 +1,9 @@
 <div class="cate_nav">
   <% site.categories.each(function (cate) { %>
   <div class="cate_nav_item">
+    <!-- <div class="cate_img"> -->
+      <img src="<%= theme.cate_img %>">
+    <!-- </div> -->
     <a href="<%- url_for('categories'+'/'+cate.name)%>"><%= cate.name %></a>
   </div>
   <% }) %>

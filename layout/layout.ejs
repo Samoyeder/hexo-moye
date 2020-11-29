@@ -3,11 +3,13 @@
 <%- partial('_partial/head') %>
 
 <body>
+    <div class="header">
+        <%- partial('_partial/header') %>
+    </div>
     <!-- header预留 -->
     <div class="container">
         <!-- 左侧menu菜单栏 -->
         <div class="menu">
-
             <%- partial('_partial/menu') %>
         </div>
         <!-- 右侧主体 -->
@@ -17,7 +19,11 @@
             <%- partial('_partial/paginator') %>
         </div>
     </div>
-    <%- partial('_partial/footer') %>
+    <div class="footer">
+        <%- partial('_partial/footer') %>
+    </div>
 </body>
+
+
 
 </html>

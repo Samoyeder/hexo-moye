@@ -1,7 +1,70 @@
 <!-- 暂时没写 -->
 
-<header>
-  <div class="avatar">
-    <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
+<header class="hidden">
+  <!-- width > 1130时候展示header_normal -->
+  <div class="header_normal" id="headerNormal">
+
+    <%- partial('_partial/search') %>
+
   </div>
+
+  <!-- width < 1130时候展示header_small -->
+  <div class="header_small_none" id="headerSmall">
+    <div class="cate_btn">
+      <button>我是分类</button>
+    </div>
+    <div class="header_title">
+      <a href="<%= url_for() %>"><%= config.title %></a>
+    </div>
+    <div class="search">search</div>
+  </div>
+
 </header>
+
+<script>
+  let header = document.querySelector('header')
+  // 
+  window.onscroll = function () {
+    headerStyleChange(header)
+  }
+  let headerNormal = document.querySelector('#headerNormal')
+  let headerSmall = document.querySelector('#headerSmall')
+
+  window.onload = function () {
+    headerContentChange(headerNormal, headerSmall)
+  }
+  window.onresize = function () {
+    headerContentChange(headerNormal, headerSmall)
+  }
+
+  // header内容根据网页宽度进行变换函数
+  function headerContentChange(headerNormal, headerSmall) {
+    if (window.innerWidth <= 1130) {
+      headerNormal.classList = 'header_normal_none'
+      headerSmall.classList = "header_small"
+    } else {
+      headerNormal.classList = 'header_normal'
+      headerSmall.classList = "header_small_none"
+    }
+  }
+  // header样式根据网页高度进行变换函数
+  function headerStyleChange(header) {
+    if (window.pageYOffset >= 100) {
+      header.classList.remove('hidden')
+    } else {
+      header.classList.add('hidden')
+    }
+  }
+
+  let cateBtn = document.querySelector('.cate_btn')
+  // let menu = document.querySelector('.index-menu')
+  cateBtn.onclick = function () {
+    if (menu.style.height == '') {
+      menu.style.height = '100%'
+      console.log(11);
+    } else if (menu.style.height == '100%') {
+      menu.style.height = ''
+      console.log(22);
+    }
+  }
+</script>

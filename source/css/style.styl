@@ -4,18 +4,37 @@ body {
     line-height: 1.5;
     font-family: Microsoft YaHei, SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
     color: #3c4858;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x hidden
 }
 
-.container{
-    display: flex
-    // background-color: red
-    justify-content: space-between
-    margin: 0 20px 0 20px
-    .body{
-        width: 1220px
+.header {
+    // width: 100vw
+    position: fixed;
+    width: 100vw;
+    // top: 0
+}
+
+.container {
+    // position: absolute
+    // text-align: center
+    display: flex;
+    // background-color: blue;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+    width: 1480px;
+
+    // .menu{
+    // width: 230px
+    // position relative
+    // }
+    .body {
+        width: 1220px;
+        // background-color: red;
     }
 }
-
 
 // partial样式文件
 @import '_partial/archive.styl';
@@ -24,7 +43,40 @@ body {
 @import '_partial/menu.styl';
 @import '_partial/cateNav.styl';
 @import '_partial/postTitle.styl';
-
+@import '_partial/custom.styl';
+@import '_partial/header.styl';
 @import 'reset.styl';
 @import 'index.styl';
 @import 'post.styl';
+
+@media (max-width: 1500px) {
+    .container {
+        width: 1130px;
+
+        // justify-content: space-around;
+        .body {
+            width: 850px;
+            // background-color: red;
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .container {
+        width: 850px;
+        // justify-content: space-around;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 850px) {
+    .container {
+        width: 508px;
+        // justify-content: space-around;
+        margin-top: 50px;
+        .body {
+            width: 508px;
+            // background-color: red;
+        }
+    }
+}

@@ -1,7 +1,6 @@
-<% if (is_current(theme.menu.categories)) { %>
-<%- partial('_partial/category') %>
-<% } else if (is_current(theme.menu.tags)) { %>
-<%- partial('_partial/tag') %>
+<!-- 判断theme.menu.archive然后给模板是无效的，必须建立archive.js才能作为archive的模板，由于未知原因分类标签都会用该模板 -->
+<% if(is_current(theme.menu.archive)){ %>
+<%- partial('_partial/archives') %>
 <% } else { %>
 <%- partial('_partial/custom') %>
 <% } %>

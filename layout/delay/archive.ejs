@@ -1,0 +1,40 @@
+<section class="archive">
+
+
+
+  <div class="tag">
+    <span><%= page.tag %></span>
+    <% page.posts.forEach(function(post) { %>
+    <li class="post-item">
+      <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
+      <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+    </li>
+    <% }) %>
+
+    <div class="category">
+      <span><%= page.category %></span>
+      <span><%= page.categories %></span>
+      <span><%= page.category.post %></span>
+      <% page.posts.forEach(function(post) { %>
+      <li class="post-item">
+        <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
+        <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </li>
+      <% }) %>
+    </div>
+  
+  </div>
+  <script>
+    window.onload = function () {
+      let category = document.querySelector('.category')
+      let tag = document.querySelector('.tag')
+      // 当前网页url（因为a的href最后没有/（除了首页），所以把网页最后的/删除掉）
+      let winHrefAr = window.location.href.substr(0, window.location.href.length - 37)
+      if (winHrefAr == 'http://localhost:4000/categories/') {
+        tag.innerHTML = ''
+      } else if (winHrefAr == 'http://localhost:4000/tags/') {
+        category.innerHTML = ''
+      }
+    }
+  </script>
+</section>

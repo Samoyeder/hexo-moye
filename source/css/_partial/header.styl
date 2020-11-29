@@ -1,6 +1,44 @@
-header{
-    width: 100vw
-    .avatar{
-        width: 250px
+.hidden {
+    height: 0;
+    overflow: hidden;
+    opacity: 1;
+
+    @media (max-width: 1130px) {
+        height: 50px;
+    }
+}
+
+header {
+    box-shadow: 0 3px 5px rgba(31, 45, 61, 0.05), 0 2px 3px rgba(31, 45, 61, 0.08), inset 0 -1px hsla(0, 0%, 100%, 0.05);
+    background-color: #fff;
+    height: 50px;
+    transition: all 0.3s;
+    z-index: 99;
+    display: flex;
+    // flex-direction: column
+    justify-content: space-around;
+    padding: 0 20px;
+
+    .header_normal_none {
+        display: none;
+    }
+
+    .header_normal {
+        display: inline;
+    }
+
+    .header_small {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .cate_btn {
+            background-color: red;
+        }
+    }
+
+    .header_small_none {
+        display: none;
     }
 }

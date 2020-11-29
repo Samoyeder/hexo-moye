@@ -1,18 +1,12 @@
 <div class="index-menu">
   <div class="menu_title">
-    <a href="<%= url_for() %>" class="logo"><%= config.title %></a>
+    <a href="<%= url_for() %>"><%= config.title %></a>
   </div>
   <div class="menu-box">
     <div class="menu-item ">
       <a href="<%- url_for(theme.menu["home"])%>" class="menu-item-link active">
         <i class="fa fa-home"></i>
         <span><%= '首页' %></span>
-      </a>
-    </div>
-    <div class="menu-item">
-      <a href="<%- url_for(theme.menu['archives'])%>" class="menu-item-link">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        <span><%= '归档' %></span>
       </a>
     </div>
     <div class="menu-item">
@@ -23,11 +17,12 @@
     </div>
 
     <script>
+      // 定义menu变量，header使用
+      let menu = document.querySelector('.index-menu')
       // 菜单按钮active
       let menuItems = document.querySelectorAll('.menu-item')
       // 当前网页url（因为a的href最后没有/（除了首页），所以把网页最后的/删除掉）
       let winHref = window.location.href.substr(0, window.location.href.length - 1)
-
       for (let menuItem of menuItems) {
         // 当a的href == 网页url时
         if (menuItem.querySelector('a').href == winHref) {
@@ -41,6 +36,7 @@
 
       }
 
+
       /* 垃圾代码
       if(window.location.href === 'http://localhost:4000/'){
         menuItems[0].classList.add('active')
@@ -51,8 +47,6 @@
       }
       }
       */
-
-      
     </script>
   </div>
   <div class="toc">
