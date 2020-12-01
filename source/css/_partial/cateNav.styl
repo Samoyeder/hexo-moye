@@ -1,31 +1,43 @@
 .cate_nav {
-  width: 100%;
+  // width: 100%;
+  // width: 2000px
   display: flex;
-  overflow: auto;
+  // flex-wrap: nowrap
+  overflow-x: auto;
 
+  // position relative
   .cate_nav_item {
     margin: 20px 15px 20px 20px;
     position: relative;
+    height: 150px;
+    width: 300px;
+    // display: inline-block
+    // overflow: hidden;
+    // background-color: red
 
     img {
       height: 150px;
       width: 300px;
-      z-index: -2;
-      position: absolute;
-      top: 0;
-      left: 0;
+      // z-index: -2;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
       border-radius: 10px;
       box-shadow: rgba(46, 0, 153, 0.3) 0px 6px 18px;
     }
   }
 
   a {
+    z-index: 10;
+    position: absolute
+    top: 0
+    left: 0
     display: flex;
     width: 300px;
     height: 150px;
-    justify-content: space-around
-    align-items: center
-    color: #fff
-    font-size: 20px
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
   }
 }
