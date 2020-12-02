@@ -11,6 +11,12 @@ username: 'Samoyeder'
 # 分类图片
 cate_img: /img/category/cat1.png
 
+# banner图片
+banner: 
+- /img/banner/1.jpg
+- /img/banner/2.png
+
+
 # 博客title
 title: 'Hello World'
 

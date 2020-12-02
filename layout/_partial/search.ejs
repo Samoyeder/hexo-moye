@@ -2,7 +2,8 @@
   <div class="local_search_content">
     <div class="local_search_title">
       <h2>搜索</h2>
-      <div class="local_search_close">x</div>
+      <i class="fa fa-times local_search_close"></i>
+      <!-- <div class="local_search_close">x</div> -->
     </div>
     <!-- <form class="local_search_form"> -->
     <input type="text" id="localSearchInput" class="local_search_input" />
@@ -80,7 +81,8 @@
               }
               // 0x05. show search results
               if (isMatch) {
-                str += "<li><a href='" + data_url + "' class='search_result_title' target='_blank'>" +
+                
+                str += "<li><a href='" + data_url+ " ' class='search_result_title' target='_blank'>" +
                   orig_data_title + "</a>";
                 var content = orig_data_content;
                 if (first_occur >= 0) {

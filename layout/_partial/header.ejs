@@ -3,8 +3,13 @@
 <header class="hidden">
   <!-- width > 1130时候展示header_normal -->
   <div class="header_normal" id="headerNormal">
-    <button class="search_open_btn">搜索</button>
-    <%- partial('_partial/search') %>
+    <div class="header_normal_title">
+      <a href="<%= url_for() %>"><%= config.title %></a>
+    </div>
+    <div class="header_normal_btn">
+      <i class="fa fa-search search_open_btn"></i>
+      <%- partial('_partial/search') %>
+    </div>
 
   </div>
 
