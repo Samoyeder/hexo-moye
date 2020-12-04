@@ -1,12 +1,79 @@
 <div class="banner">
   <div class="banner_swiper">
-    <ul class="banner_list">
-      <% theme.banner.map(function (banner) { %>
-      <li class="item">
-        <img src="<%- banner %>" alt="">
-      </li>
-      <%})%>
-    </ul>
+    <!-- 当在首页时显示推荐文章 -->
+    <% if(page.path=="index.html") {%>
+      <% site.posts.map(function (post) { %>
+        <% if(post.recommend){ %>
+          <!-- banner大图 -->
+          <ul class="banner_list">
+            <li class="banner_list_item">
+              <div class="banner_mask"></div>
+              <div class="banner_img">
+          <img src="<%- post.index_img %>">
+              </div>
+              <div class="banner_page">
+          <div class="post_page_cate">
+            <% post.categories.each(function(cate){ %>
+            <a href="<%- url_for(cate.path) %>">
+              <i class="fa fa-list"></i>
+              <span>
+                <%= cate.name %>
+              </span>
+            </a>
+            <% }) %>
+          </div>
+          <a href="<%- url_for(post.path) %>">
+            <img src="<%- post.index_img %>" alt="">
+          </a>
+              </div>
+              <div class="banner_post">
+                <div class="banner_post_title"><%= post.title %></div>
+                <div class="banner_post_time"><%- date(post.date, 'YYYY-MM-DD') %></div>
+                <div class="banner_more">
+                  <a href="<%- url_for(post.path) %>">阅读全文</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        <% } %>
+      <% }) %>
+    <!-- 不在主页时显示页面文章 -->
+    <% } else {%>
+      <% page.posts.map(function (post) { %>
+        <!-- banner大图 -->
+        <ul class="banner_list">
+          <li class="banner_list_item">
+            <div class="banner_mask"></div>
+            <div class="banner_img">
+            <img src="<%- post.index_img %>">
+            </div>
+            <div class="banner_page">
+            <div class="post_page_cate">
+              <% post.categories.each(function(cate){ %>
+              <a href="<%- url_for(cate.path) %>">
+                <i class="fa fa-list"></i>
+                <span>
+                  <%= cate.name %>
+                </span>
+              </a>
+              <% }) %>
+            </div>
+            <a href="<%- url_for(post.path) %>">
+              <img src="<%- post.index_img %>" alt="">
+            </a>
+            </div>
+            <div class="banner_post">
+              <div class="banner_post_title"><%= post.title %></div>
+              <div class="banner_post_time"><%- date(post.date, 'YYYY-MM-DD') %></div>
+              <div class="banner_more">
+                <a href="<%- url_for(post.path) %>">阅读全文</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <% }) %>
+    <% } %> 
+    <!-- 切换按钮 -->
     <div class="banner_btn">
       <div class="banner_btn_up">
         <i class="fa fa-angle-up"></i>
@@ -17,6 +84,54 @@
     </div>
   </div>
 </div>
-<!-- <script>
-  
-</script> -->
+<script>
+  // var banner = document.querySelector('.banner_swiper')
+  // 获取轮播图li
+  var items = document.querySelectorAll('.banner_list_item')
+  // var pageItems = document.querySelectorAll('.banner_page_list_item')
+  // 分别获取两个按钮
+  var up = document.querySelector('.banner_btn_up')
+  var down = document.querySelector('.banner_btn_down')
+  // 这个index就是要展示的图片的序号
+  var index = 0
+
+  items[0].classList.add('active')
+  // pageItems[0].classList.add('active')
+  var clearActive = function () {
+    for (var item of items) {
+      // 清除每一个li的active类
+      item.classList.remove('active')
+    }
+    // for (var item of pageItems) {
+    //   // 清除每一个li的active类
+    //   item.classList.remove('active')
+    // }
+  }
+  var showIndex = function () {
+    // 先清除
+    clearActive()
+    // 展示
+    items[index].classList.add('active')
+    // pageItems[index].classList.add('active')
+  }
+  up.onclick = function () {
+    console.log(1)
+    // index从0开始，length属性是从1开始的，所以要-1
+    if (index == items.length - 1) {
+      // 为什么是-1呢？当index=-1时再往下执行index++后正好是0，如果是0的话index自增完就变成了1，那样di0张图片就展示不到了
+      index = -1
+    }
+    index++
+    // 展示图片
+    showIndex()
+  }
+
+  down.onclick = function () {
+    if (index == 0) {
+      // 为什么是length而不是length-1？设置为length向下执行后自减变成length-1.正好等于最后一张图片的index
+      index = items.length
+    }
+    index--
+    showIndex()
+  }
+</script>

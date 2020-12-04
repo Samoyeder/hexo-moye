@@ -20,19 +20,6 @@
             <!-- 右边上部分文章标题\摘要 -->
             <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
             <a href="<%- url_for(post.path) %>">阅读全文</a>
-            <!-- 右边下部分文章分类\时间 -->
-            <!-- <div class="post-meta">
-                <div class="post-cate">
-                    <% post.categories.each(function(cate){ %>
-                    <a href="<%- url_for(cate.path) %>">
-                        <i class="fa fa-list"></i>
-                        <%= cate.name %>
-                    </a>
-                    <% }) %>
-                </div>
-
-
-            </div> -->
         </div>
 
 
