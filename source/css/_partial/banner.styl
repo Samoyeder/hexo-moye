@@ -25,6 +25,7 @@
           background-color: #000;
           box-shadow: 0 0 20px rgba(31, 45, 61, 0.2s);
           opacity: 0.7;
+          border-radius: 0 0 12px 12px;
         }
 
         .banner_img {
@@ -38,6 +39,7 @@
             transform: scale(2);
             width: 100%;
             height: 100%;
+            border-radius: 0 0 12px 12px;
           }
         }
 
@@ -67,8 +69,15 @@
             display: flex;
             align-items: center;
 
-            i, span {
+            a {
               color: #657487;
+              opacity: 0.8;
+              transition: all, 0.3s;
+
+              &:hover {
+                opacity: 1;
+                color: rgb(50, 182, 255);
+              }
             }
           }
         }
@@ -105,9 +114,16 @@
               // background-image: linear-gradient(90deg, rgb(56, 103, 114), rgb(73, 144, 148));
               border-radius: 20px;
               border: 1px solid #fff;
+              opacity: 0.6;
               // width: 70px
               padding: 7px 14px;
               text-align: center;
+              transition: all 0.3s;
+
+              &:hover {
+                opacity: 1;
+                padding: 7px 24px;
+              }
             }
           }
         }

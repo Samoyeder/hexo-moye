@@ -9,7 +9,19 @@ username: 'Samoyeder'
 
 
 # 分类图片
-cate_img: /img/category/cat1.png
+cate_img: 
+- /img/category/cate1.jpg
+- /img/category/cate2.jpg
+- /img/category/cate3.jpg
+- /img/category/cate4.jpg
+- /img/category/cate5.jpg
+- /img/category/cate6.jpg
+- /img/category/cate7.jpg
+- /img/category/cate1.jpg
+- /img/category/cate2.jpg
+- /img/category/cate3.jpg
+- /img/category/cate4.jpg
+- /img/category/cate5.jpg
 
 # banner图片
 banner: 
