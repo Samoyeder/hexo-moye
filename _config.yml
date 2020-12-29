@@ -7,7 +7,12 @@ avatar: /img/avatar.jpg
 # 用户名
 username: 'Samoyeder'
 
-
+# 图片懒加载
+lazyload:
+  enable: true
+  onlypost: false # optional
+  loadingImg: # optional eg ./images/loading.gif
+  isSPA: false # optional
 # 分类图片
 cate_img: 
 - /img/category/cate1.jpg
@@ -27,6 +32,7 @@ cate_img:
 banner: 
 - /img/banner/1.jpg
 - /img/banner/2.png
+
 
 
 # 博客title

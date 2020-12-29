@@ -1,59 +1,52 @@
-.hidden {
-    height: 0;
-    overflow: hidden;
-    opacity: 1;
-
-    @media (max-width: 1130px) {
-        height: 50px;
-    }
-}
 
 header {
-    box-shadow: 0 3px 5px rgba(31, 45, 61, 0.05), 0 2px 3px rgba(31, 45, 61, 0.08), inset 0 -1px hsla(0, 0%, 100%, 0.05);
-    background-color: #fff;
+  // transition: all 0.3s;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+
+  // flex-direction: column
+  // justify-content: space-around;
+
+  // padding: 0 20px;
+  .header_title {
+    // margin-left: 10px
+    width: 255px;
     height: 50px;
-    transition: all 0.3s;
-    z-index: 99;
+    line-height: 50px;
+    transition: all 0.4s;
+
+    // background-color: #fff
+    // padding-left: 25px
+    a {
+      margin-left: 40px;
+    }
+
+    &.scroll {
+      background-color: #fff;
+      box-shadow: 0 3px 5px rgba(31, 45, 61, 0.05), 0 2px 3px rgba(31, 45, 61, 0.08), inset 0 -1px hsla(0, 0%, 100%, 0.05);
+    }
+  }
+
+  .header_btn {
+    opacity: 0;
+    height: 50px;
+    visibility: hidden;
+    // overflow: hidden;
+    flex: 1;
+    // width: 100vw
     display: flex;
-    // flex-direction: column
-    justify-content: space-around;
-    padding: 0 20px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 50px;
+    // background-color: #bfa;
+    transition: all 0.4s;
 
-    .header_normal_none {
-        display: none;
+    &.scroll {
+      background-color: #fff;
+      visibility: visible;
+      opacity: 1;
+      box-shadow: 0 3px 5px rgba(31, 45, 61, 0.05), 0 2px 3px rgba(31, 45, 61, 0.08), inset 0 -1px hsla(0, 0%, 100%, 0.05);
     }
-
-    .header_normal {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        // background-color: green
-        width: 100%
-        .header_normal_title {
-            // background-color: red;
-        }
-
-        // text-align: right;
-        .header_normal_btn {
-            // background-color: black
-            .search_open_btn {
-                cursor: pointer;
-            }
-        }
-    }
-
-    .header_small {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        align-items: center;
-
-        .cate_btn {
-            background-color: red;
-        }
-    }
-
-    .header_small_none {
-        display: none;
-    }
+  }
 }

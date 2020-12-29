@@ -23,7 +23,15 @@
         <%- partial('_partial/footer') %>
     </div>
 </body>
+<script>
+    hljs.initHighlightingOnLoad();
 
+    document.querySelectorAll('code').forEach(block => {
+        if(!(block.className == /js c/g)){
+            block.classList.add('highlight')
+        }
+    });
+</script>
 
 
 </html>

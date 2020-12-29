@@ -1,7 +1,7 @@
 <div class="banner">
   <div class="banner_swiper">
     <!-- 当在首页时显示推荐文章 -->
-    <% if(page.path=="index.html") {%>
+    <% if(page.path == /index.html/g) {%>
       <% site.posts.map(function (post) { %>
         <% if(post.recommend){ %>
           <!-- banner大图 -->
